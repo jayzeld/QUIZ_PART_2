@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebAPIDiscussion.Models;
 using WebAPIDiscussion.Utils;
 
@@ -34,6 +35,8 @@ namespace WebAPIDiscussion.Controllers
             //{
             //    return StatusCode(StatusCodes.Status401Unauthorized, new ResponseModel { Status = "Error", Message = "Access Denied" });
             //}
+
+           
 
             var userExist = await _userManager.FindByNameAsync(model.Username);
             if (userExist != null) 
